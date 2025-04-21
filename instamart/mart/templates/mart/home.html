@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instamart</title>
+    <link rel="stylesheet" href="{% static 'mart/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Instamart</h1>
+        </header>
+
+        <section class="categories">
+            <h3>Categories:</h3>
+            <ul>
+                <li><a href="/">All</a></li>
+                {% for cat in categories %}
+                    <li><a href="?category={{ cat.id }}">{{ cat.name }}</a></li>
+                {% empty %}
+                    <li>No categories available.</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="products">
+            <h3>Products:</h3>
+            <div class="product-list">
+                {% if products %}
+                    {% for product in products %}
+                        <div class="product">
+                            {% if product.image %}
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                            {% else %}
+                                <p><i>No image</i></p>
+                            {% endif %}
+                            <p><strong>{{ product.name }}</strong></p>
+                            <p>₹{{ product.price }}</p>
+                            <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No products available in this category.</p>
+                {% endif %}
+            </div>
+        </section>
+
+        <footer>
+            <a href="{% url 'view_cart' %}">🛒 View Cart</a>
+        </footer>
+    </div>
+</body>
+</html>

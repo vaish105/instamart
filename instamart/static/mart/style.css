@@ -1,0 +1,147 @@
+/* General Layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+}
+
+h1, h3 {
+    color: #444;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Product Section */
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px; /* Set a maximum height for the images */
+    object-fit: contain; /* Ensures images maintain their aspect ratio */
+    margin-bottom: 15px;
+}
+
+.product p {
+    margin: 10px 0;
+}
+
+.product strong {
+    font-size: 18px;
+    color: #333;
+}
+
+.product a {
+    color: #fff;
+    background-color: #28a745;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.product a:hover {
+    background-color: #218838;
+}
+
+/* Cart Section */
+.cart-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    max-width: 800px;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.cart-item a {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.cart-item a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+/* Category Section */
+.categories ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.categories li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.categories a {
+    font-size: 16px;
+    color: #007bff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.categories a:hover {
+    text-decoration: underline;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+}

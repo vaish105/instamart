@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Instamart</title>
+    <link rel="stylesheet" href="{% static 'mart/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Cart</h1>
+        </header>
+
+        {% if cart_items %}
+            <section class="cart-items">
+                {% for item in cart_items %}
+                    <div class="cart-item">
+                        <p><strong>{{ item.product.name }}</strong> (x{{ item.qty }})</p>
+                        <p>Price: ₹{{ item.product.price }} each</p>
+                        <p>Subtotal: ₹{{ item.subtotal }}</p>
+                        <a href="{% url 'remove_from_cart' item.product.id %}">Remove</a>
+                        <hr>
+                    </div>
+                {% endfor %}
+                <h3>Total: ₹{{ total }}</h3>
+                <a href="/">Back to Shop</a>
+            </section>
+        {% else %}
+            <div class="empty-cart">
+                <p>Your cart is empty.</p>
+                <a href="/">Go back to shopping</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
